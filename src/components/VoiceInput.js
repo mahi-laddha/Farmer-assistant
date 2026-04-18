@@ -135,7 +135,7 @@ export default function VoiceInput({ lang, onSubmitQuery }) {
         formData.append("audio", blob, "speech.mp3");
 
         const res = await fetch(
-          `${process.env.TRANSCRIBE_URL}/api/transcribe`,
+          `${process.env.REACT_APP_TRANSCRIBE_URL}/api/transcribe`,
           { method: "POST", body: formData }
         );
 
