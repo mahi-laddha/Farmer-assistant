@@ -133,9 +133,10 @@ export default function VoiceInput({ lang, onSubmitQuery }) {
 
         const formData = new FormData();
         formData.append("audio", blob, "speech.mp3");
+        
 
         const res = await fetch(
-          `${process.env.TRANSCRIBE_URL}/api/transcribe`,
+          `${process.env.REACT_APP_TRANSCRIBE_URL}/api/transcribe`, // ❌ wrong env variable
           { method: "POST", body: formData }
         );
 
@@ -196,19 +197,19 @@ export default function VoiceInput({ lang, onSubmitQuery }) {
       {/* 🔊 Hidden Audio Player */}
       <audio
         ref={englishAudioRef}
-        src={`${process.env.PUBLIC_URL}/audio/instructions_en.mp3`}
+        src="/audio/public_audio_instructions_en.mp3"
         preload="auto"
         onEnded={handleAudioEnd}
       />
       <audio
         ref={hindiAudioRef}
-        src={`${process.env.PUBLIC_URL}/audio/instructions_hi.mp3`}
+        src="/audio/public_audio_instructions_hi.mp3"
         preload="auto"
         onEnded={handleAudioEnd}
       />
       <audio
         ref={marathiAudioRef}
-        src="/audio/instructions_mr.mp3"
+        src="/audio/public_audio_instructions_mr.mp3"
         preload="auto"
         onEnded={handleAudioEnd}
       />
