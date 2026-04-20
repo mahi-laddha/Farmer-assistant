@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuth } from '../util/auth';
+import { useAuth } from '../utils/auth';
 import { useTranslation } from 'react-i18next';
 import LanguageToggle from './LanguageToggle';
 
